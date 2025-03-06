@@ -1,8 +1,8 @@
-# Android Project 5 - *BitFit*
+# Android Project 5 - _BitFit_
 
 Submitted by: **Katherin Jimenez**
 
-**BitFit** is a health metrics app that allows users to track ... [TODO] 
+**BitFit** is a health metrics app that allows users to track ... [TODO]
 
 Time spent: **X** hours spent in total
 
@@ -10,22 +10,22 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **At least one health metric is tracked (based on user input)**
-  - Chosen metric(s): `[TODO: FILL ME IN TO GET CREDIT]`
-- [ ] **There is a "create entry" UI that prompts users to make their daily entry**
-- [ ] **New entries are saved in a database and then updated in the RecyclerView**
-- [ ] **On application restart, previously entered entries are preserved (i.e., are *persistent*)**
- 
+- [x] **At least one health metric is tracked (based on user input)**
+  - Chosen metric(s): `Hours of sleep, mood and notes`
+- [x] **There is a "create entry" UI that prompts users to make their daily entry**
+- [x] **New entries are saved in a database and then updated in the RecyclerView**
+- [x] **On application restart, previously entered entries are preserved (i.e., are _persistent_)**
+
 The following **optional** features are implemented:
 
-- [ ] **Create a UI for tracking averages and trends in metrics**
-- [ ] **Improve and customize the user interface through styling and coloring**
+- [x] **Create a UI for tracking averages and trends in metrics**
+- [x] **Improve and customize the user interface through styling and coloring**
 - [ ] **Implement orientation responsivity**
 - [ ] **Add a daily photo feature**
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] User can click on past entry to edit it
 
 ## Video Walkthrough
 
@@ -34,7 +34,9 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+
+GIF created with ...
+
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
