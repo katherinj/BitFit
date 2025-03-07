@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [SleepLogEntity::class], version = 1)
+@Database(entities = [SleepLogEntity::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun sleepLogDao(): SleepLogDao
 
@@ -23,6 +23,6 @@ abstract class AppDatabase : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java, "Articles-db"
-            ).build()
+            ).fallbackToDestructiveMigration().build()
     }
 }

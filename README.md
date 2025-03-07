@@ -2,9 +2,9 @@
 
 Submitted by: **Katherin Jimenez**
 
-**BitFit** is a health metrics app that allows users to track ... [TODO]
+**BitFit** is a health metrics app that allows users to track hours of sleep and mood.
 
-Time spent: **X** hours spent in total
+Time spent: _4_ hours spent in total
 
 ## Required Features
 
@@ -31,24 +31,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-
-GIF created with ...
-
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
-
-## Notes
-
-Describe any challenges encountered while building the app.
+<img src='resources/bitfit.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Katherin Jimenez]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

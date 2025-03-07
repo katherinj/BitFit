@@ -14,6 +14,9 @@ interface SleepLogDao {
     @Query("SELECT * FROM sleep_logs ORDER BY id DESC")
     fun getAllSleepLogs(): Flow<List<SleepLogEntity>>
 
+    @Query("DELETE FROM sleep_logs WHERE id = :logId")
+    fun deleteSleepLog(logId: Int)
+
     @Query("DELETE FROM sleep_logs")
     fun deleteAll()
 

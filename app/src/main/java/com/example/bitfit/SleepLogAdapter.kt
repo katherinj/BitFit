@@ -3,43 +3,48 @@ package com.example.bitfit
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class SleepLogAdapter(
-    private var sleepLogs: List<SleepLogEntity>,
-    private val onItemClick: (SleepLogEntity) -> Unit
+    private val sleepLogs: MutableList<SleepLogEntity>,
+    private val itemClickListener: (SleepLogEntity) -> Unit,
+    private val deleteClickListener: (SleepLogEntity) -> Unit
 ) : RecyclerView.Adapter<SleepLogAdapter.SleepLogViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SleepLogViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_sleep_log, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_sleep_log, parent, false)
         return SleepLogViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: SleepLogViewHolder, position: Int) {
-        val sleepLog = sleepLogs[position]
-        holder.date.text = sleepLog.date
-        holder.hours.text = "Slept %.1f hours".format(sleepLog.hours)
-        holder.mood.text = "Feeling ${sleepLog.mood}/10"
-        holder.notes.text = sleepLog.notes
+        val log = sleepLogs[position]
+        holder.bind(log)
+    }
 
-        holder.itemView.setOnClickListener {
-            onItemClick(sleepLog)
+    override fun getItemCount() = sleepLogs.size
+
+    inner class SleepLogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
+        private val hoursTextView: TextView = itemView.findViewById(R.id.hoursTextView)
+        private val moodTextView: TextView = itemView.findViewById(R.id.moodTextView)
+        private val notesTextView: TextView = itemView.findViewById(R.id.notesTextView)
+        private val deleteButton: Button = itemView.findViewById(R.id.deleteButton)
+
+        fun bind(sleepLog: SleepLogEntity) {
+            dateTextView.text = sleepLog.date
+            hoursTextView.text = "Slept ${sleepLog.hours} hours"
+            moodTextView.text = "Feeling ${sleepLog.mood}/10"
+            notesTextView.text = sleepLog.notes ?: ""
+
+            itemView.setOnClickListener {
+                itemClickListener(sleepLog)
+            }
+
+            deleteButton.setOnClickListener {
+                deleteClickListener(sleepLog)
+            }
         }
-    }
-
-    override fun getItemCount(): Int = sleepLogs.size
-
-    fun updateData(newLogs: List<SleepLogEntity>) {
-        sleepLogs = newLogs
-        notifyDataSetChanged()
-    }
-
-    class SleepLogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val date: TextView = itemView.findViewById(R.id.dateTextView)
-        val hours: TextView = itemView.findViewById(R.id.hoursTextView)
-        val mood: TextView = itemView.findViewById(R.id.moodTextView)
-        val notes: TextView = itemView.findViewById(R.id.notesTextView)
     }
 }
